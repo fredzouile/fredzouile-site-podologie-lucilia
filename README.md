@@ -46,7 +46,7 @@ Il suffit d'avoir Node.js 18 ou plus récent ; il n'y a rien à installer.
 |---|---|
 | `npm run dev` | génère le site et l'affiche sur http://localhost:8080 |
 | `npm run build` | génère le site dans `dist/` |
-| `npm run apercu` | crée en plus `dist/apercu-accueil.html`, un fichier unique à envoyer pour validation |
+| `npm run apercu` | crée en plus `dist/apercu-site.html` : tout le site en un seul fichier navigable, à ouvrir sur un téléphone ou à envoyer pour validation |
 | `npm run build:prod` | génération finale : échoue s'il reste une information à compléter ou à confirmer |
 
 Tant que `siteUrl` contient le domaine provisoire (`.example`), les pages sont en `noindex` et

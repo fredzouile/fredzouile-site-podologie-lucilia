@@ -5,8 +5,8 @@
  *   node build.mjs            → génère dist/ (mode aperçu : « À COMPLÉTER » surligné)
  *   node build.mjs --prod     → échoue s'il reste une information à compléter
  *   node build.mjs --serve    → génère puis sert dist/ sur http://localhost:8080
- *   node build.mjs --apercu   → crée aussi dist/apercu-accueil.html, un fichier unique (styles, polices
- *                               et images intégrés) à ouvrir sur un téléphone ou à envoyer pour validation
+ *   node build.mjs --apercu   → crée aussi dist/apercu-site.html, tout le site en un seul fichier (styles, polices,
+ *                               images et pages intégrés), navigable, à ouvrir sur un téléphone ou à envoyer
  *
  * Sources :
  *   site.config.json   informations du cabinet (une seule source de vérité)
@@ -399,22 +399,91 @@ function build() {
 
 build();
 
-/* Aperçu autonome de l'accueil : un seul fichier HTML, sans dépendance au serveur. */
+/* Aperçu autonome du site entier : un seul fichier HTML (styles, polices, images et toutes les pages
+   intégrés), navigable sans serveur — à ouvrir sur un téléphone ou à envoyer pour validation. */
 if (args.has('--apercu')) {
   const mime = { '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png' };
   const dataUri = (file) => `data:${mime[path.extname(file)]};base64,${fs.readFileSync(file).toString('base64')}`;
   const css = fs.readFileSync(path.join(DIST, 'assets/css/site.css'), 'utf8')
     .replace(/url\("\.\.\/(fonts|img)\/([^"]+)"\)/g, (_, dir, f) => `url("${dataUri(path.join(DIST, 'assets', dir, f))}")`);
   const js = fs.readFileSync(path.join(DIST, 'assets/js/site.js'), 'utf8');
-  let html = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8')
-    .replace(/<link rel="(preload|icon|apple-touch-icon)"[^>]*>\s*/g, '')
-    .replace(/<link rel="stylesheet"[^>]*>/, `<style>\n${css}\n</style>`)
-    .replace(/<script src="[^"]*site\.js[^"]*" defer><\/script>/, '')
-    .replace(/\s+srcset="[^"]*"/g, '')
-    .replace(/src="\/assets\/img\/([^"]+)"/g, (_, f) => `src="${dataUri(path.join(DIST, 'assets/img', f))}"`)
-    .replace('</body>', `<script>\n${js}\n</script>\n</body>`);
-  fs.writeFileSync(path.join(DIST, 'apercu-accueil.html'), html);
-  console.log(`\n→ Aperçu autonome : dist/apercu-accueil.html (${Math.round(html.length / 1024)} Ko)`);
+  const spriteRe = /<!-- Icônes[^>]*-->\s*<svg[^>]*class="svg-sprite"[\s\S]*?<\/svg>/;
+  const files = walk(DIST).filter((f) => /(^|\/)(index|404)\.html$/.test(path.relative(DIST, f)));
+  let sprite = '';
+  const templates = files.map((f) => {
+    const rel = path.relative(DIST, f).split(path.sep).join('/');
+    const route = rel === '404.html' ? '/404.html' : `/${rel.replace(/index\.html$/, '')}`;
+    const src = fs.readFileSync(f, 'utf8');
+    const title = (src.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
+    const bodyClass = (src.match(/<body class="([^"]*)"/) || [])[1] || '';
+    let body = src.slice(src.indexOf('>', src.indexOf('<body')) + 1, src.lastIndexOf('</body>'));
+    sprite = sprite || (body.match(spriteRe) || [''])[0];
+    body = body.replace(spriteRe, '').replace(/\s+srcset="[^"]*"/g, '')
+      .replace(/src="\/assets\/img\/([^"]+)"/g, (_, img) => `src="${dataUri(path.join(DIST, 'assets/img', img))}"`);
+    return `<template data-path="${esc(route)}" data-title="${title}" data-class="${esc(bodyClass)}">${body}</template>`;
+  });
+  const router = `
+(function () {
+  var root = document.getElementById('apercu-root'), pages = {}, current = null;
+  document.querySelectorAll('template[data-path]').forEach(function (t) { pages[t.getAttribute('data-path')] = t; });
+  function show(route) {
+    var parts = route.split('#'), p = parts[0] || '/', anchor = parts[1];
+    if (!pages[p]) p = pages[p + '/'] ? p + '/' : '/404.html';
+    if (p !== current) {
+      var t = pages[p];
+      root.replaceChildren(t.content.cloneNode(true));
+      document.title = t.getAttribute('data-title');
+      document.body.className = t.getAttribute('data-class');
+      current = p;
+      runSite();
+    }
+    var el = anchor && document.getElementById(anchor);
+    if (el) el.scrollIntoView({ behavior: 'instant' }); else window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  function hashRoute() { var h = decodeURIComponent(location.hash.slice(1)); return h.charAt(0) === '/' ? h : '/'; }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (href.charAt(0) === '#') {
+      e.preventDefault();
+      var el = document.getElementById(href.slice(1));
+      if (el) { el.scrollIntoView(); if (el.tabIndex === -1) el.focus(); }
+    } else if (href.charAt(0) === '/' && href.charAt(1) !== '/') {
+      e.preventDefault();
+      if (decodeURIComponent(location.hash.slice(1)) === href) show(href); else location.hash = href;
+    }
+  });
+  window.addEventListener('hashchange', function () { show(hashRoute()); });
+  show(hashRoute());
+})();`;
+  const html = `<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF8F3">
+<title>Aperçu – ${esc(site.nomSite)}</title>
+<style>
+${css}
+</style>
+</head>
+<body>
+${sprite}
+<div id="apercu-root"></div>
+${templates.join('\n')}
+<script>
+function runSite() {
+${js}
+}
+${router}
+</script>
+</body>
+</html>
+`;
+  fs.writeFileSync(path.join(DIST, 'apercu-site.html'), html);
+  console.log(`\n→ Aperçu autonome du site (${templates.length} pages) : dist/apercu-site.html (${Math.round(html.length / 1024)} Ko)`);
 }
 
 if (args.has('--serve')) {
