@@ -1,0 +1,63 @@
+---
+{
+  "path": "/mentions-legales/",
+  "title": "Mentions légales | Podologue Paris 16 – Lucilia Afonso",
+  "description": "Mentions légales du site de Lucilia Afonso, pédicure-podologue à Paris 16e : éditrice, inscription à l'Ordre, numéro RPPS et hébergeur du site.",
+  "priority": 0.2,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Mentions légales", "path": "/mentions-legales/" }],
+  "eyebrow": "Informations légales",
+  "h1": "Mentions légales",
+  "lead": "Informations prévues par la loi pour la confiance dans l'économie numérique et par les règles de la profession de pédicure-podologue.",
+  "cta": false
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout page-layout--single">
+      <article class="prose legal">
+        <h2 id="editrice">Éditrice du site</h2>
+        <dl>
+          <dt>Nom</dt><dd>{{ site.praticienne.nom }}</dd>
+          <dt>Profession</dt><dd>Pédicure-podologue (profession de santé réglementée)</dd>
+          <dt>Adresse</dt><dd>{{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</dd>
+          <dt>Téléphone</dt><dd><a href="tel:{{@ site.cabinet.telephone }}">{{ site.cabinet.telephoneAffiche }}</a></dd>
+          <dt>Email</dt><dd><a href="mailto:{{@ site.cabinet.email }}">{{ site.cabinet.email }}</a></dd>
+          <dt>Forme d'exercice</dt><dd>{{ site.entreprise.statut }}</dd>
+          <dt>SIRET</dt><dd>{{ site.entreprise.siret }}</dd>
+          <dt>N° RPPS</dt><dd>{{ site.praticienne.rpps }}</dd>
+          <dt>Inscription à l'Ordre</dt><dd>Inscrite au tableau de l'Ordre des pédicures-podologues, {{ site.praticienne.ordre }}</dd>
+        </dl>
+
+        <h2 id="profession">Profession réglementée</h2>
+        <ul>
+          <li>Titre professionnel&nbsp;: pédicure-podologue, diplôme d'État obtenu en France ({{ site.praticienne.diplomeDetail }}).</li>
+          <li>Ordre professionnel&nbsp;: Ordre national des pédicures-podologues (onpp.fr).</li>
+          <li>Règles professionnelles&nbsp;: Code de la santé publique, notamment le code de déontologie des pédicures-podologues (articles R.&nbsp;4322-31 et suivants), consultable sur Légifrance.</li>
+        </ul>
+
+        <h2 id="publication">Directrice de la publication</h2>
+        <p>{{ site.praticienne.nom }}.</p>
+
+        <h2 id="hebergeur">Hébergeur</h2>
+        <dl>
+          <dt>Société</dt><dd>{{ site.hebergeur.nom }}</dd>
+          <dt>Adresse</dt><dd>{{ site.hebergeur.adresse }}</dd>
+          <dt>Téléphone</dt><dd>{{ site.hebergeur.telephone }}</dd>
+          <dt>Site</dt><dd>{{ site.hebergeur.site }}</dd>
+        </dl>
+
+        <h2 id="information-medicale">Information de santé</h2>
+        <p>Les informations publiées sur ce site sont générales et données à titre informatif. Elles ne remplacent ni une consultation, ni un avis médical, ni un diagnostic personnalisé. En cas d'urgence, appelez le <a href="tel:15">15</a> ou le <a href="tel:112">112</a>.</p>
+
+        <h2 id="propriete">Propriété intellectuelle</h2>
+        <p>Les textes, photographies, logo et éléments graphiques de ce site sont protégés par le droit d'auteur. Toute reproduction, même partielle, est interdite sans autorisation préalable.</p>
+        <p>Crédits&nbsp;: polices Cormorant Garamond, Source Sans 3 et Ephesis (licence SIL Open Font License 1.1)&nbsp;; icônes Lucide (licence ISC).</p>
+
+        <h2 id="liens">Liens externes</h2>
+        <p>Ce site contient des liens vers des services tiers (Doctolib, Google Maps). Leur contenu et leurs conditions d'utilisation relèvent de la seule responsabilité de leurs éditeurs.</p>
+
+        <h2 id="donnees">Données personnelles et cookies</h2>
+        <p>Voir la <a href="/confidentialite/">politique de confidentialité et de gestion des cookies</a>.</p>
+      </article>
+    </div>

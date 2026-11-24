@@ -283,31 +283,7 @@
           <p class="eyebrow">Questions fréquentes</p>
           <h2 id="faq-title">Vos questions avant de prendre rendez-vous</h2>
         </header>
-        <div class="faq">
-          <details class="faq__item">
-            <summary>Faut-il une ordonnance pour consulter un podologue&nbsp;?</summary>
-            <div class="faq__answer">
-              <p>Non. Vous pouvez consulter un pédicure-podologue directement, sans passer par votre médecin. Une prescription médicale est en revanche nécessaire pour le remboursement des semelles orthopédiques et des séances de prévention chez les patients diabétiques.</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>Les semelles orthopédiques sont-elles remboursées&nbsp;?</summary>
-            <div class="faq__answer">
-              <p>En partie, si elles sont prescrites par un médecin. L'Assurance Maladie rembourse sur la base d'un tarif réglementaire, inférieur au prix de semelles sur mesure&nbsp;; votre mutuelle peut prendre en charge tout ou partie du reste selon votre contrat.</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>Que faut-il apporter au premier rendez-vous&nbsp;?</summary>
-            <div class="faq__answer">
-              <p>Votre carte Vitale, votre ordonnance si vous en avez une, les chaussures que vous portez le plus souvent (y compris de sport), vos anciennes semelles et vos examens récents (radios, échographies).</p>
-            </div>
-          </details>
-          <details class="faq__item">
-            <summary>Combien de temps dure une consultation&nbsp;?</summary>
-            <div class="faq__answer">
-              <p>{{ site.consultation.duree }}</p>
-            </div>
-          </details>
+        <div class="faq">{{{ blocks.faqAccueil }}}
         </div>
         <p class="section__more section__more--center"><a class="link-arrow" href="/faq/">Toutes les questions fréquentes<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
       </div>
@@ -369,22 +345,4 @@
       </div>
     </section>
 
-    <!-- ============ Appel final ============ -->
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="container cta-band__inner">
-        <div>
-          <h2 id="cta-title" class="cta-band__title">Prenez soin de vos pieds</h2>
-          <p>Rendez-vous en ligne sur Doctolib, 24&nbsp;h/24, ou par téléphone au {{ site.cabinet.telephoneAffiche }}.</p>
-        </div>
-        <div class="actions">
-          <a class="btn btn--light btn--lg" href="{{@ site.cabinet.doctolib }}">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
-            Prendre rendez-vous
-          </a>
-          <a class="btn btn--outline-light btn--lg" href="tel:{{@ site.cabinet.telephone }}">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
-            Appeler
-          </a>
-        </div>
-      </div>
-    </section>
+    {{> cta-band }}

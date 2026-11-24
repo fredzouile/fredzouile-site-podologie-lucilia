@@ -1,0 +1,103 @@
+---
+{
+  "path": "/contact-acces/",
+  "title": "Contact, horaires et accès | Podologue Paris 16",
+  "description": "Cabinet de podologie au 24 rue Jouvenet, 75016 Paris : horaires, métro, bus, stationnement, accessibilité. Rendez-vous sur Doctolib ou par téléphone.",
+  "priority": 0.8,
+  "bodyClass": "page-inner",
+  "schema": ["cabinet"],
+  "breadcrumb": [{ "name": "Contact et accès", "path": "/contact-acces/" }],
+  "eyebrow": "Contact",
+  "h1": "Contact, horaires et accès au cabinet",
+  "lead": "Prenez rendez-vous en ligne ou par téléphone. Le cabinet se trouve au 24 rue Jouvenet, dans le 16<sup>e</sup> arrondissement de Paris.",
+  "cta": false
+}
+---
+    {{> page-hero }}
+
+    <section class="section" aria-labelledby="rdv-titre">
+      <div class="container">
+        <h2 id="rdv-titre" class="visually-hidden">Prendre rendez-vous</h2>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <h3 class="contact-card__title"><span class="mini-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span>En ligne, 24&nbsp;h/24</h3>
+            <p>Choisissez votre créneau sur Doctolib. C'est aussi le plus simple pour déplacer ou annuler un rendez-vous.</p>
+            <a class="btn btn--primary btn--lg" href="{{@ site.cabinet.doctolib }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+              Prendre rendez-vous sur Doctolib
+            </a>
+          </div>
+          <div class="contact-card">
+            <h3 class="contact-card__title"><span class="mini-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg></span>Par téléphone</h3>
+            <a class="big-phone" href="tel:{{@ site.cabinet.telephone }}">{{ site.cabinet.telephoneAffiche }}</a>
+            <a class="btn btn--outline btn--lg" href="tel:{{@ site.cabinet.telephone }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              Appeler le cabinet
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sage" id="acces" aria-labelledby="acces-titre">
+      <div class="container contact">
+        <div class="contact__info">
+          <h2 id="acces-titre">Horaires et accès</h2>
+          <dl class="infolist">
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Adresse</dt>
+              <dd><address>{{ site.cabinet.rue }}<br>{{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</address></dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>Horaires</dt>
+              <dd class="hours">{{{ blocks.hoursTable }}}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-metro"/></svg>Métro</dt>
+              <dd>{{{ blocks.metroList }}}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bus"/></svg>Bus</dt>
+              <dd>{{ site.acces.bus }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-car"/></svg>Stationnement</dt>
+              <dd>{{ site.acces.stationnement }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-access"/></svg>Accessibilité</dt>
+              <dd>{{ site.acces.accessibilite }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"/></svg>À domicile</dt>
+              <dd>{{ site.cabinet.domicile }}</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="map" data-map data-src="{{@ blocks.mapsEmbed }}">
+          <div class="map__placeholder">
+            <span class="map__pin"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>
+            <p class="map__address"><strong>{{ site.cabinet.rue }}</strong><br>{{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</p>
+            <p class="map__notice">La carte est fournie par Google Maps, qui dépose des cookies. Elle ne s'affiche qu'avec votre accord.</p>
+            <button type="button" class="btn btn--outline btn--sm" data-map-load>Afficher la carte</button>
+            <a class="link-arrow" href="{{@ blocks.mapsDirections }}">Itinéraire dans Google Maps<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="ecrire-titre">
+      <div class="container container--narrow prose">
+        <h2 id="ecrire-titre">Écrire au cabinet</h2>
+        <p>Pour une question pratique (accès, documents à apporter, facture), vous pouvez écrire à <a href="mailto:{{@ site.cabinet.email }}">{{ site.cabinet.email }}</a>.</p>
+        <p class="note note--sand">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <span><strong>Ne décrivez pas vos symptômes ni votre état de santé par email.</strong> Pour protéger votre confidentialité, ces informations sont recueillies en consultation. Le cabinet ne donne pas d'avis médical à distance.</span>
+        </p>
+        <p class="note note--alert">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <span>En cas d'urgence, appelez le <a href="tel:15">15</a> (SAMU) ou le <a href="tel:112">112</a>.</span>
+        </p>
+      </div>
+    </section>

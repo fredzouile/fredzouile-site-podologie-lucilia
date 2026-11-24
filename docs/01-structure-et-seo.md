@@ -1,14 +1,14 @@
 # Étape 1 : structure du site et plan SEO
 
 Site vitrine de **Lucilia Afonso, pédicure-podologue**, 24 rue Jouvenet, 75016 Paris.
-Ce document sert de base de validation avant la rédaction des pages intérieures (étape 2).
+Étape 1 validée ; toutes les pages ci-dessous sont rédigées (étape 2).
 
 ---
 
 ## 1. Arborescence
 
 ```
-/                                     Accueil                         ← maquette livrée (étape 1)
+/                                     Accueil
 ├── /le-cabinet/                      Le cabinet et la praticienne
 ├── /prestations/                     Toutes les prestations (page carrefour)
 │   ├── /prestations/bilan-podologique/
@@ -143,7 +143,7 @@ prise en charge*.
 | Page | Types schema.org |
 |---|---|
 | Accueil | `MedicalBusiness` + `LocalBusiness`, `Person` (la praticienne), `WebSite`, `WebPage` |
-| Contact et accès | `MedicalBusiness` + `LocalBusiness` (avec horaires), `WebPage`, `BreadcrumbList` |
+| Le cabinet, Contact et accès | `MedicalBusiness` + `LocalBusiness` (avec horaires), `Person`, `WebPage`, `BreadcrumbList` |
 | FAQ | `FAQPage`, `WebPage`, `BreadcrumbList` |
 | Autres pages | `WebPage`, `BreadcrumbList` |
 

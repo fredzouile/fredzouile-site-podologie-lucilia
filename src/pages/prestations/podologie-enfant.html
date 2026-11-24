@@ -1,0 +1,75 @@
+---
+{
+  "path": "/prestations/podologie-enfant/",
+  "title": "Podologie de l'enfant | Podologue Paris 16 – L. Afonso",
+  "description": "Podologue pour enfants à Paris 16e : pieds plats, marche sur la pointe, pieds en dedans, douleurs de croissance. Bilan, conseils et semelles.",
+  "prestation": "podologie-enfant",
+  "faq": "podologie-enfant",
+  "priority": 0.7,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Prestations", "path": "/prestations/" }, { "name": "Podologie de l'enfant", "path": "/prestations/podologie-enfant/" }],
+  "eyebrow": "Prestation",
+  "h1": "Podologie de l'enfant&nbsp;: bilan et suivi de la croissance",
+  "lead": "Les pieds de l'enfant évoluent beaucoup pendant la croissance. Un bilan permet de faire la part entre ce qui est normal pour son âge et ce qui mérite un suivi.",
+  "brefPourQui": "Enfants et adolescents&nbsp;: pieds plats ou creux, marche sur la pointe, pieds en dedans, douleurs.",
+  "brefPriseEnCharge": "Bilan non remboursé&nbsp;; semelles remboursées en partie sur prescription médicale."
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout">
+      <article class="prose">
+        {{> key-facts }}
+
+        <h2 id="pour-qui" class="section-anchor">Quand consulter&nbsp;?</h2>
+        <ul class="checklist">
+          <li>votre enfant se plaint de douleurs aux pieds, aux talons ou aux genoux&nbsp;;</li>
+          <li>il se fatigue vite à la marche ou tombe souvent&nbsp;;</li>
+          <li>il marche sur la pointe des pieds de façon persistante&nbsp;;</li>
+          <li>ses pieds tournent nettement vers l'intérieur ou l'extérieur&nbsp;;</li>
+          <li>ses chaussures s'usent de façon très inégale&nbsp;;</li>
+          <li>un pied plat persiste en grandissant ou devient douloureux&nbsp;;</li>
+          <li>il a mal au talon pendant ou après le sport, notamment au début de la puberté.</li>
+        </ul>
+        <p class="note">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <span>Chez le jeune enfant, la voûte plantaire se forme progressivement, souvent jusqu'à 5 ou 6 ans&nbsp;: un pied d'aspect plat est donc fréquent et le plus souvent normal.</span>
+        </p>
+
+        <h2 id="deroulement" class="section-anchor">Comment se passe le bilan&nbsp;?</h2>
+        <ol class="steps">
+          <li class="step">
+            <h3 class="step__title">Échange avec l'enfant et ses parents</h3>
+            <p>Acquisition de la marche, chutes, douleurs, activités sportives, chaussures portées.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Examen, en jouant</h3>
+            <p>Observation des pieds et des jambes, de la marche et de la course, de l'équilibre&nbsp;: l'examen se fait en douceur et de façon ludique.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Explications et conseils</h3>
+            <p>Ce qui est normal pour son âge, ce qui mérite d'être surveillé, conseils de chaussage et d'activité.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Si nécessaire</h3>
+            <p><a href="/semelles-orthopediques/">Semelles orthopédiques</a> adaptées à la croissance, suivi régulier, ou orientation vers le médecin.</p>
+          </li>
+        </ol>
+        <p>Venez avec les chaussures habituelles de votre enfant et prévoyez un short. Le cabinet reçoit les enfants {{ site.cabinet.ageEnfants }}.</p>
+
+        <h2 id="duree" class="section-anchor">Durée et suivi</h2>
+        <p>Durée du bilan&nbsp;: {{ prestation.duree }}.</p>
+        <p>Les pieds de l'enfant changent vite&nbsp;: un contrôle régulier est utile, et des semelles doivent être renouvelées avec la croissance et l'évolution de la pointure.</p>
+
+        <h2 id="prise-en-charge" class="section-anchor">Prise en charge et remboursement</h2>
+        <p>Le bilan podologique n'est pas remboursé par l'Assurance Maladie. Les semelles orthopédiques sont remboursées en partie sur prescription médicale, et votre mutuelle peut compléter. <a href="/tarifs-remboursements/">Voir les tarifs du cabinet</a>.</p>
+
+        <h2 id="questions" class="section-anchor">Questions fréquentes</h2>
+        <div class="faq">{{{ blocks.faq }}}
+        </div>
+      </article>
+
+      {{> aside }}
+    </div>
+
+    {{> cta-band }}

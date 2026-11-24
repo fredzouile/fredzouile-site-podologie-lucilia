@@ -1,0 +1,28 @@
+---
+{
+  "path": "/faq/",
+  "title": "Questions fréquentes | Podologue Paris 16 – L. Afonso",
+  "description": "Ordonnance, remboursement, semelles, enfants, diabète : les réponses aux questions les plus fréquentes avant de consulter un podologue à Paris 16e.",
+  "priority": 0.7,
+  "bodyClass": "page-inner",
+  "faqSchema": true,
+  "breadcrumb": [{ "name": "Questions fréquentes", "path": "/faq/" }],
+  "eyebrow": "FAQ",
+  "h1": "Questions fréquentes sur la podologie",
+  "lead": "Les réponses aux questions les plus courantes avant un premier rendez-vous. Pour une question sur votre situation personnelle, parlons-en en consultation."
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout">
+      <div class="prose faq-page">{{{ blocks.faqComplete }}}
+        <p class="note">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <span>Ces réponses sont générales et ne remplacent pas une consultation. En cas d'urgence, appelez le <a href="tel:15">15</a> ou le <a href="tel:112">112</a>.</span>
+        </p>
+      </div>
+
+      {{> aside }}
+    </div>
+
+    {{> cta-band }}

@@ -1,0 +1,25 @@
+<aside class="aside" aria-label="Rendez-vous et autres soins">
+        <div class="aside-card aside-card--accent">
+          <h2 class="aside-card__title">Prendre rendez-vous</h2>
+          <p>En ligne sur Doctolib, 24&nbsp;h/24, ou par téléphone.</p>
+          <div class="actions">
+            <a class="btn btn--primary" href="{{@ site.cabinet.doctolib }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+              Prendre rendez-vous
+            </a>
+            <a class="btn btn--outline" href="tel:{{@ site.cabinet.telephone }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              <span><span class="visually-hidden">Appeler le </span>{{ site.cabinet.telephoneAffiche }}</span>
+            </a>
+          </div>
+          <p class="aside-card__meta">
+            {{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}<br>
+            <a href="/contact-acces/">Horaires et accès</a> · <a href="/tarifs-remboursements/">Tarifs</a>
+          </p>
+        </div>
+        <nav class="aside-card" aria-labelledby="aside-soins-titre">
+          <h2 class="aside-card__title" id="aside-soins-titre">{{ blocks.asideSoinsTitre }}</h2>
+          <ul class="aside-links">{{{ blocks.autresPrestations }}}
+          </ul>
+        </nav>
+      </aside>

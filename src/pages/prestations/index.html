@@ -1,0 +1,49 @@
+---
+{
+  "path": "/prestations/",
+  "title": "Soins et prestations | Podologue Paris 16 – L. Afonso",
+  "description": "Bilan podologique, semelles orthopédiques, soins de pédicurie, ongle incarné, verrue, sport, diabète, enfants : les soins du cabinet de podologie à Paris 16e.",
+  "priority": 0.8,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Prestations", "path": "/prestations/" }],
+  "eyebrow": "Prestations",
+  "h1": "Les soins podologiques proposés au cabinet",
+  "lead": "Bilan, semelles orthopédiques, soins de pédicurie et suivi des pieds fragiles&nbsp;: pour chaque soin, découvrez à qui il s'adresse, comment il se déroule et comment il est remboursé."
+}
+---
+    {{> page-hero }}
+
+    <section class="section" aria-labelledby="tous-les-soins">
+      <div class="container">
+        <header class="section__header">
+          <h2 id="tous-les-soins">Tous les soins du cabinet</h2>
+          <p class="section__intro">Chaque prise en charge commence par un échange et un examen de vos pieds. Choisissez un soin pour en savoir plus.</p>
+        </header>
+        <ul class="services">{{{ blocks.servicesGrid }}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--cream" aria-labelledby="choisir">
+      <div class="container split">
+        <div class="split__text">
+          <p class="eyebrow">Besoin d'aide pour choisir&nbsp;?</p>
+          <h2 id="choisir">Vous ne savez pas quel soin choisir&nbsp;?</h2>
+          <p>Prenez simplement rendez-vous pour une consultation&nbsp;: après un échange et un examen, je vous propose la prise en charge adaptée, ou je vous oriente vers votre médecin si un avis médical est nécessaire.</p>
+          <p>Le pédicure-podologue se consulte directement, sans ordonnance.</p>
+          <p><a class="link-arrow" href="/faq/">Consulter les questions fréquentes<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+        </div>
+        <div class="infobox">
+          <div class="infobox__item">
+            <h3 class="infobox__title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Au cabinet</h3>
+            <p>{{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}. <a href="/contact-acces/">Horaires et accès</a>.</p>
+          </div>
+          <div class="infobox__item">
+            <h3 class="infobox__title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"/></svg>À domicile</h3>
+            <p>{{ site.cabinet.domicile }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{> cta-band }}

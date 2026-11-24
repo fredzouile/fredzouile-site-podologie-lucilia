@@ -2,15 +2,21 @@
 
 Site statique, léger et sans dépendance : HTML, CSS et un peu de JavaScript, hébergeable partout.
 
-**État : étape 1 livrée** (structure, plan SEO et page d'accueil). Les pages intérieures
-arrivent à l'étape 2, après validation de la maquette.
+**État : site complet (17 pages), en attente des informations à compléter** avant mise en ligne.
 
-- Structure, titles, meta descriptions, plan des pages : [`docs/01-structure-et-seo.md`](docs/01-structure-et-seo.md)
+| Document | Contenu |
+|---|---|
+| [`docs/01-structure-et-seo.md`](docs/01-structure-et-seo.md) | arborescence, titles, meta descriptions, H1, données structurées |
+| [`docs/02-google-business-profile.md`](docs/02-google-business-profile.md) | fiche Google prête à copier (description, catégories, services, règles pour les avis) |
+| [`docs/03-mise-en-ligne.md`](docs/03-mise-en-ligne.md) | mise en ligne pas à pas (Netlify ou FTP), Search Console, mises à jour |
+
+Pages : accueil, le cabinet, prestations (+ 7 pages de soins), semelles orthopédiques, tarifs et
+remboursements, FAQ, contact et accès, mentions légales, confidentialité et cookies, page 404.
 
 ## Compléter les informations du cabinet
 
 Tout se trouve dans **`site.config.json`** : téléphone, adresse, lien Doctolib, horaires, accès,
-RPPS, etc. Chaque valeur contenant `À COMPLÉTER` apparaît surlignée en jaune sur le site et est
+RPPS, tarifs, moyens de paiement, liste des prestations, hébergeur, etc. Chaque valeur contenant `À COMPLÉTER` apparaît surlignée en jaune sur le site et est
 listée à chaque génération.
 
 Format des horaires (un jour absent = fermé) :
@@ -23,6 +29,14 @@ Format des horaires (un jour absent = fermé) :
 ```
 
 Jours : `Mo` lundi, `Tu` mardi, `We` mercredi, `Th` jeudi, `Fr` vendredi, `Sa` samedi, `Su` dimanche.
+
+Pour **retirer un soin** que le cabinet ne pratique pas, supprimez-le de la liste `prestations` :
+sa page, sa carte, sa ligne de tarif et ses liens automatiques disparaissent ; le générateur
+signale les éventuels liens écrits à la main à retoucher.
+
+La **FAQ** est rédigée une seule fois dans `src/data/faq.json` et réutilisée sur l'accueil, la
+page FAQ et les pages de soins (champ `sur`). Le balisage FAQPage pour Google n'est posé que sur
+la page FAQ, et seulement pour les réponses complètes.
 
 ## Commandes
 
@@ -43,22 +57,23 @@ le `robots.txt` bloque l'indexation. C'est voulu, pour qu'aucun aperçu ne soit 
 ```
 site.config.json     informations du cabinet (seul fichier à modifier au quotidien)
 build.mjs            générateur (gabarits, sitemap, robots.txt, JSON-LD, contrôles SEO)
-src/pages/           une page = un fichier HTML avec un en-tête JSON (title, description…)
-src/partials/        en-tête, pied de page, barre de RDV mobile, bandeau cookies, icônes
+src/pages/           une page = un fichier HTML avec un en-tête JSON (title, description, H1…)
+src/partials/        en-tête, pied de page, barre de RDV mobile, bandeau cookies, icônes…
+src/data/faq.json    questions fréquentes (source unique)
 src/assets/          css, js, polices, images
-src/static/          favicon, image de partage, icône d'écran d'accueil
+src/static/          favicon, image de partage, icône d'écran d'accueil, .htaccess (Apache)
 docs/                documents de travail (structure, SEO, Google Business Profile…)
 netlify.toml         configuration d'hébergement et en-têtes de sécurité
 ```
 
 ## Mise en ligne (résumé)
 
-Les instructions détaillées seront livrées à l'étape 2.
+Instructions détaillées : [`docs/03-mise-en-ligne.md`](docs/03-mise-en-ligne.md).
 
 - **Netlify** (par défaut) : relier ce dépôt GitHub. `netlify.toml` est déjà prêt (commande
   `node build.mjs`, dossier `dist`).
 - **Autre hébergeur (OVH, o2switch…)** : lancer `npm run build:prod`, puis déposer le contenu de
-  `dist/` à la racine du site par FTP.
+  `dist/` (y compris `.htaccess`) à la racine du site par FTP.
 
 ## Crédits et licences
 

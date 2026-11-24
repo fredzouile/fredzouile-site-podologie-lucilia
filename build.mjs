@@ -148,6 +148,55 @@ function metroList() {
 const adresseLigne = `${site.cabinet.rue}, ${site.cabinet.codePostal} ${site.cabinet.ville}`;
 const mapsQuery = encodeURIComponent(`${site.cabinet.rue}, ${site.cabinet.codePostal} ${site.cabinet.ville}`);
 
+function breadcrumb(page) {
+  if (!page.breadcrumb) return '';
+  const items = [{ name: 'Accueil', path: '/' }, ...page.breadcrumb];
+  return `<nav class="breadcrumb" aria-label="Fil d'Ariane"><ol>${items.map((b, i) => (i === items.length - 1
+    ? `<li><span aria-current="page">${esc(b.name)}</span></li>`
+    : `<li><a href="${esc(b.path)}">${esc(b.name)}</a></li>`)).join('')}</ol></nav>`;
+}
+
+/* Autres prestations (maillage interne entre les pages de soins) */
+function autresPrestations(currentId) {
+  return site.prestations.filter((s) => s.id !== currentId).map((s) => `
+            <li><a href="${esc(s.url)}"><span class="mini-icon">${icon(s.icone)}</span>${esc(s.titre)}</a></li>`).join('');
+}
+
+/* Tarifs : une ligne liée à une prestation retirée de la configuration disparaît aussi. */
+function tarifsTable() {
+  const ids = new Set(site.prestations.map((s) => s.id));
+  const rows = site.tarifs.lignes.filter((l) => !l.prestation || ids.has(l.prestation)).map((l) => `
+            <tr><th scope="row">${esc(l.acte)}${l.note ? `<span class="price-table__note">${esc(l.note)}</span>` : ''}</th><td>${esc(l.prix)}</td></tr>`).join('');
+  return `<table class="price-table"><caption class="visually-hidden">Tarifs du cabinet</caption>
+          <thead><tr><th scope="col">Acte</th><th scope="col">Tarif</th></tr></thead>
+          <tbody>${rows}
+          </tbody></table>`;
+}
+
+/* FAQ : une seule source (src/data/faq.json), affichée sur plusieurs pages ; balisage FAQPage sur /faq/ uniquement. */
+const FAQ = JSON.parse(fs.readFileSync(path.join(SRC, 'data/faq.json'), 'utf8'));
+function faqItems(key, ctx) {
+  return FAQ.filter((f) => f.sur.includes(key)).map((f) => ({ ...f, a: render(f.a, ctx) }));
+}
+function faqHtml(items, withIds = false) {
+  return items.map((f) => `
+          <details class="faq__item"${withIds ? ` id="${esc(f.id)}"` : ''}>
+            <summary>${esc(f.q)}</summary>
+            <div class="faq__answer">${f.a}</div>
+          </details>`).join('');
+}
+function faqComplete(ctx) {
+  const items = faqItems('faq', ctx);
+  const cats = [...new Set(items.map((f) => f.categorie))];
+  return cats.map((c, i) => `
+        <section class="faq-group" aria-labelledby="faq-cat-${i}">
+          <h2 id="faq-cat-${i}">${esc(c)}</h2>
+          <div class="faq">${faqHtml(items.filter((f) => f.categorie === c), true)}
+          </div>
+        </section>`).join('');
+}
+const stripTags = (html) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
 /* ---------- données structurées (JSON-LD) ---------- */
 function jsonLd(page) {
   const graph = [];
@@ -209,10 +258,12 @@ function jsonLd(page) {
       itemListElement: [{ name: 'Accueil', path: '/' }, ...page.breadcrumb].map((b, i) => ({ '@type': 'ListItem', position: i + 1, name: b.name, item: baseUrl + b.path })),
     });
   }
-  if (page.faq) {
+  if (page.faqItems?.length) {
+    // Une réponse encore « À COMPLÉTER » est exclue du balisage (elle reste visible sur la page).
+    const ready = page.faqItems.filter((q) => !isTodo(q.a));
     graph.push({
       '@type': 'FAQPage',
-      mainEntity: page.faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })),
+      mainEntity: ready.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: stripTags(q.a) } })),
     });
   }
   // Les valeurs « À COMPLÉTER » ne doivent jamais partir dans les données structurées.
@@ -246,13 +297,28 @@ function build() {
 
   for (const { meta, body, file } of pages) {
     const page = { ...meta };
+    const prestation = page.prestation ? site.prestations.find((s) => s.id === page.prestation) : null;
+    if (page.prestation && !prestation) {
+      report.warnings.push(`${path.relative(ROOT, file)} ignorée : la prestation « ${page.prestation} » n'est plus dans site.config.json`);
+      continue;
+    }
     page.canonical = baseUrl + page.path;
     page.noindex = page.noindex || placeholderDomain;
-    const ctx = {
-      site, page, assets,
-      blocks: {
+    const ctx = { site, page, assets, prestation };
+    if (page.faqSchema) page.faqItems = faqItems('faq', ctx);
+    ctx.blocks = {
         robots: page.noindex ? '<meta name="robots" content="noindex, follow">' : '',
+        canonical: page.path.endsWith('.html') ? '' : `<link rel="canonical" href="${esc(page.canonical)}">`,
         jsonld: jsonLd(page),
+        breadcrumb: breadcrumb(page),
+        autresPrestations: autresPrestations(page.prestation),
+        tarifsTable: tarifsTable(),
+        faqAccueil: faqHtml(faqItems('accueil', ctx)),
+        faq: page.faq ? faqHtml(faqItems(page.faq, ctx)) : '',
+        faqComplete: page.faqSchema ? faqComplete(ctx) : '',
+        heroActions: page.cta === false ? '' : partials['hero-actions'],
+        asideSoinsTitre: page.prestation ? 'Autres soins' : 'Les soins du cabinet',
+        langues: site.praticienne.langues.join(', '),
         nav: navHtml(page.path),
         navCourt: navHtml(page.path, true),
         servicesGrid: servicesGrid(),
@@ -264,7 +330,6 @@ function build() {
         mapsEmbed: `https://maps.google.com/maps?q=${mapsQuery}&z=16&output=embed`,
         cookieDays: String(site.cookies.dureeConsentementJours),
         cookieBanner: site.cookies.bandeau ? partials['cookie-banner'] : '',
-      },
     };
     ctx.blocks.cookieBanner = render(ctx.blocks.cookieBanner, ctx);
     const content = render(body, ctx);
@@ -292,6 +357,23 @@ function build() {
     report.pages.push(page);
   }
 
+  // liens internes cassés (pages et ancres)
+  const htmlFiles = walk(DIST).filter((f) => f.endsWith('.html'));
+  const idsOf = new Map(htmlFiles.map((f) => [f, new Set([...fs.readFileSync(f, 'utf8').matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))]));
+  for (const f of htmlFiles) {
+    const src = fs.readFileSync(f, 'utf8');
+    for (const [, href] of src.matchAll(/\shref="((?:\/(?!\/)|#)[^"]*)"/g)) {
+      const [p, frag] = href.split('#');
+      let target = f;
+      if (p) {
+        const clean = p.split('?')[0];
+        target = path.join(DIST, clean, clean.endsWith('/') ? 'index.html' : '');
+        if (!fs.existsSync(target)) { report.warnings.push(`lien cassé dans ${path.relative(DIST, f)} : ${href}`); continue; }
+      }
+      if (frag && idsOf.has(target) && !idsOf.get(target).has(frag)) report.warnings.push(`ancre introuvable dans ${path.relative(DIST, f)} : ${href}`);
+    }
+  }
+
   // sitemap.xml et robots.txt
   const today = new Date().toISOString().slice(0, 10);
   const urls = report.pages.filter((p) => !p.noindex && !p.path.endsWith('.html'))
@@ -303,6 +385,7 @@ function build() {
     : `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`);
 
   // rapport
+  report.warnings = [...new Set(report.warnings)];
   console.log(`\n✔ ${report.pages.length} page(s) générée(s) dans dist/`);
   if (placeholderDomain) report.warnings.unshift(`siteUrl provisoire (${site.siteUrl}) : pages en noindex, robots.txt bloquant`);
   if (report.warnings.length) console.log('\n⚠ Contrôles :\n  - ' + report.warnings.join('\n  - '));
