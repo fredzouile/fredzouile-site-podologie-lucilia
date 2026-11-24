@@ -1,0 +1,55 @@
+<footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="/">
+          <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+          <span class="brand__text">
+            <span class="brand__name">Lucilia Afonso</span>
+            <span class="brand__role">Pédicure-podologue<span class="brand__place"> · Paris 16<sup>e</sup></span></span>
+          </span>
+        </a>
+        <p class="site-footer__credentials">
+          Pédicure-podologue diplômée d'État, inscrite au tableau de l'Ordre des pédicures-podologues.<br>
+          N° RPPS : {{ site.praticienne.rpps }}
+        </p>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">Cabinet</h2>
+        <address class="site-footer__address">
+          {{ site.cabinet.rue }}<br>
+          {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}
+        </address>
+        <ul class="site-footer__contact">
+          <li><a href="tel:{{@ site.cabinet.telephone }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>{{ site.cabinet.telephoneAffiche }}</a></li>
+          <li><a href="{{@ site.cabinet.doctolib }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>Rendez-vous sur Doctolib</a></li>
+          <li><a href="{{@ blocks.mapsDirections }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-route"/></svg>Itinéraire</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="site-footer__title">Horaires</h2>
+        <div class="hours hours--footer">{{{ blocks.hoursTable }}}</div>
+      </div>
+
+      <nav aria-label="Plan du site">
+        <h2 class="site-footer__title">Le site</h2>
+        <ul class="site-footer__links">
+          {{{ blocks.nav }}}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container site-footer__legal">
+      <p class="site-footer__disclaimer">
+        Les informations de ce site sont données à titre informatif et ne remplacent pas une consultation.
+        En cas d'urgence, appelez le <a href="tel:15">15</a> ou le <a href="tel:112">112</a>.
+      </p>
+      <ul class="site-footer__legal-links">
+        <li><a href="/mentions-legales/">Mentions légales</a></li>
+        <li><a href="/confidentialite/">Confidentialité</a></li>
+        <li><button type="button" class="link-button" data-cookie-settings>Gestion des cookies</button></li>
+      </ul>
+      <p>© {{ blocks.year }} Lucilia Afonso</p>
+    </div>
+  </footer>

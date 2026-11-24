@@ -1,0 +1,15 @@
+{
+  "name": "site-podologue-paris16-lucilia-afonso",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Site vitrine de Lucilia Afonso, pédicure-podologue à Paris 16e",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:prod": "node build.mjs --prod",
+    "dev": "node build.mjs --serve",
+    "apercu": "node build.mjs --apercu"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

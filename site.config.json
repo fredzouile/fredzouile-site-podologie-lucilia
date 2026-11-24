@@ -1,0 +1,89 @@
+{
+  "_lisezmoi": "Toutes les informations du cabinet sont ici. Une valeur contenant « À COMPLÉTER » s'affiche surlignée sur le site et bloque la mise en production (npm run build:prod). Les entrées de « aConfirmer » sont des hypothèses à valider.",
+
+  "siteUrl": "https://podologue-paris16.example",
+  "langue": "fr-FR",
+  "nomSite": "Lucilia Afonso – Pédicure-podologue Paris 16e",
+
+  "praticienne": {
+    "nom": "Lucilia Afonso",
+    "titre": "Pédicure-podologue",
+    "diplome": "Diplôme d'État de pédicure-podologue",
+    "diplomeDetail": "[À COMPLÉTER : année et institut de formation]",
+    "rpps": "[À COMPLÉTER : n° RPPS]",
+    "ordre": "[À COMPLÉTER : n° d'inscription au conseil régional de l'Ordre des pédicures-podologues d'Île-de-France]",
+    "langues": ["Français"]
+  },
+
+  "cabinet": {
+    "nom": "Cabinet de podologie Lucilia Afonso",
+    "rue": "24 rue Jouvenet",
+    "codePostal": "75016",
+    "ville": "Paris",
+    "quartier": "Auteuil",
+    "region": "Île-de-France",
+    "pays": "FR",
+    "telephone": "+33621811712",
+    "telephoneAffiche": "06 21 81 17 12",
+    "email": "afonson.lucilia14@gmail.com",
+    "doctolib": "https://www.doctolib.fr/pedicure-podologue/paris/lucilia-afonso",
+    "ficheGoogle": "",
+    "zone": ["Paris 16e", "Auteuil", "Passy", "Paris 15e", "Boulogne-Billancourt"]
+  },
+
+  "horaires": [],
+  "horairesTexte": "[À COMPLÉTER : jours et horaires d'ouverture]",
+
+  "acces": {
+    "metro": [
+      { "station": "Chardon-Lagache", "ligne": "10" },
+      { "station": "Exelmans", "ligne": "9" }
+    ],
+    "bus": "[À COMPLÉTER : lignes de bus]",
+    "stationnement": "[À COMPLÉTER : parking, stationnement]",
+    "accessibilite": "[À COMPLÉTER : étage, ascenseur, accès en fauteuil roulant]"
+  },
+
+  "consultation": {
+    "duree": "[À COMPLÉTER : durée d'un bilan, d'un soin, de la remise des semelles]"
+  },
+
+  "semelles": {
+    "technique": "[À COMPLÉTER : technique de prise d'empreinte]",
+    "fabrication": "[À COMPLÉTER : au cabinet ou en laboratoire]",
+    "delai": "[À COMPLÉTER : délai de fabrication]"
+  },
+
+  "prestations": [
+    { "id": "bilan-podologique", "titre": "Bilan podologique", "icone": "footprints", "url": "/prestations/bilan-podologique/", "confirme": true,
+      "resume": "Examen des pieds, de la marche et de la posture pour comprendre l'origine d'une douleur ou d'une gêne." },
+    { "id": "semelles-orthopediques", "titre": "Semelles orthopédiques", "icone": "insole", "url": "/semelles-orthopediques/", "confirme": true,
+      "resume": "Orthèses plantaires sur mesure, conçues après un bilan complet et contrôlées dans le temps." },
+    { "id": "soins-de-pedicurie", "titre": "Soins de pédicurie", "icone": "foot", "url": "/prestations/soins-de-pedicurie/", "confirme": true,
+      "resume": "Cors, durillons, callosités, ongles épais ou difficiles à couper : des soins précis, réalisés en douceur." },
+    { "id": "ongle-incarne", "titre": "Ongle incarné", "icone": "nail", "url": "/prestations/ongle-incarne/", "confirme": false,
+      "resume": "Soin de l'ongle qui pénètre dans la peau, et conseils de coupe et de chaussage pour limiter les récidives." },
+    { "id": "verrue-plantaire", "titre": "Verrue plantaire", "icone": "wart", "url": "/prestations/verrue-plantaire/", "confirme": false,
+      "resume": "Traitement des verrues sous le pied, séance après séance, avec des conseils pour éviter la contagion." },
+    { "id": "podologie-du-sport", "titre": "Podologie du sport", "icone": "sneaker", "url": "/prestations/podologie-du-sport/", "confirme": false,
+      "resume": "Analyse de la foulée et des chaussures, semelles adaptées à votre pratique, de la course à pied au tennis." },
+    { "id": "pied-diabetique", "titre": "Pied diabétique", "icone": "drop", "url": "/prestations/pied-diabetique/", "confirme": false,
+      "resume": "Examen régulier, soins de prévention et conseils pour protéger des pieds devenus fragiles." },
+    { "id": "podologie-enfant", "titre": "Podologie de l'enfant", "icone": "baby", "url": "/prestations/podologie-enfant/", "confirme": false,
+      "resume": "Pieds plats, marche sur la pointe, pieds qui tournent en dedans : un regard attentif pendant la croissance." }
+  ],
+
+  "cookies": {
+    "bandeau": true,
+    "dureeConsentementJours": 180
+  },
+
+  "aConfirmer": [
+    "cabinet.doctolib : adresse de la page Doctolib (lien supposé)",
+    "cabinet.email : orthographe « afonson »",
+    "acces.metro : stations Chardon-Lagache (10) et Exelmans (9)",
+    "prestations : ongle incarné, verrue, sport, diabète, enfant (non confirmées)",
+    "siteUrl : nom de domaine définitif",
+    "photo : portrait provisoire recadré depuis le visuel, à remplacer par la photo HD"
+  ]
+}
