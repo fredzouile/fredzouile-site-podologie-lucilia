@@ -1,0 +1,83 @@
+---
+{
+  "path": "/prestations/pied-diabetique/",
+  "title": "Pied diabétique : soins de prévention | Podologue Paris 16",
+  "description": "Pied diabétique à Paris 16e : examen des pieds, soins de prévention et conseils. Séances prises en charge selon le niveau de risque, sur prescription.",
+  "prestation": "pied-diabetique",
+  "faq": "pied-diabetique",
+  "priority": 0.7,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Prestations", "path": "/prestations/" }, { "name": "Pied diabétique", "path": "/prestations/pied-diabetique/" }],
+  "eyebrow": "Prestation",
+  "h1": "Pied diabétique&nbsp;: examen et soins de prévention",
+  "lead": "Le diabète peut diminuer la sensibilité des pieds et ralentir la cicatrisation. Un suivi régulier par un pédicure-podologue aide à repérer et prévenir les blessures avant qu'elles ne se compliquent.",
+  "brefPourQui": "Patients diabétiques, en particulier ceux dont le pied est classé à risque par leur médecin.",
+  "brefPriseEnCharge": "Grades 2 et 3&nbsp;: bilan et séances de prévention pris en charge sur prescription médicale."
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout">
+      <article class="prose">
+        {{> key-facts }}
+
+        <h2 id="pourquoi" class="section-anchor">Pourquoi les pieds sont-ils fragiles en cas de diabète&nbsp;?</h2>
+        <p>Avec le temps, le diabète peut atteindre les nerfs (perte de sensibilité&nbsp;: une ampoule ou une petite blessure n'est plus ressentie) et les artères (la cicatrisation est plus lente). La peau devient aussi plus sèche. Une lésion banale peut alors s'aggraver sans bruit&nbsp;: c'est pourquoi la prévention est essentielle.</p>
+        <p class="note note--alert">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+          <span>Une plaie au pied, même petite, nécessite un avis médical rapide.</span>
+        </p>
+
+        <h2 id="grades" class="section-anchor">Le niveau de risque, du grade 0 au grade 3</h2>
+        <p>Votre médecin évalue le risque de vos pieds, notamment en testant leur sensibilité&nbsp;:</p>
+        <ul>
+          <li><strong>grade 0</strong>&nbsp;: pas de perte de sensibilité&nbsp;;</li>
+          <li><strong>grade 1</strong>&nbsp;: perte de sensibilité&nbsp;;</li>
+          <li><strong>grade 2</strong>&nbsp;: perte de sensibilité associée à une artériopathie ou à une déformation du pied&nbsp;;</li>
+          <li><strong>grade 3</strong>&nbsp;: antécédent de plaie chronique du pied ou d'amputation.</li>
+        </ul>
+
+        <h2 id="deroulement" class="section-anchor">Comment se passe le suivi&nbsp;?</h2>
+        <ol class="steps">
+          <li class="step">
+            <h3 class="step__title">Bilan podologique</h3>
+            <p>Examen de la peau, des ongles, de la sensibilité, des déformations et des zones d'appui, ainsi que de vos chaussures et chaussettes.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Soins de prévention</h3>
+            <p>Coupe des ongles, retrait des callosités sur les zones à risque, soins des cors, avec une attention particulière à la fragilité de la peau.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Éducation et conseils</h3>
+            <p>Examen quotidien de vos pieds, hygiène, hydratation, choix des chaussures&nbsp;; si besoin, semelles ou protections pour décharger une zone d'appui.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Lien avec votre médecin</h3>
+            <p>Un compte rendu peut être transmis à votre médecin, et je vous oriente vers lui au moindre signe d'alerte.</p>
+          </li>
+        </ol>
+
+        <h2 id="prise-en-charge" class="section-anchor">Prise en charge et remboursement</h2>
+        <p>Aux grades 2 et 3, l'Assurance Maladie prend en charge, sur prescription médicale, un bilan podologique et des séances de soins de prévention&nbsp;: jusqu'à 5 séances par an au grade 2, et jusqu'à 6 séances par an au grade 3 (davantage dans certaines situations), selon la réglementation en vigueur. Le taux de remboursement dépend de votre situation, notamment si vous êtes en affection de longue durée.</p>
+        <p>La Haute Autorité de santé recommande un suivi podologique dès le grade 1&nbsp;; il n'est alors pas pris en charge par l'Assurance Maladie, mais votre mutuelle peut y participer.</p>
+        <p>Situation du cabinet&nbsp;: {{ site.cabinet.conventionnement }}. Durée d'une séance&nbsp;: {{ prestation.duree }}. <a href="/tarifs-remboursements/">Voir les tarifs du cabinet</a>.</p>
+
+        <h2 id="bons-gestes" class="section-anchor">Les bons gestes au quotidien</h2>
+        <ul class="checklist">
+          <li>regardez vos pieds chaque jour, dessous compris (avec un miroir ou l'aide d'un proche)&nbsp;;</li>
+          <li>lavez-les à l'eau tiède en vérifiant la température avec le coude, puis séchez bien entre les orteils&nbsp;;</li>
+          <li>hydratez la peau, sauf entre les orteils&nbsp;;</li>
+          <li>ne marchez pas pieds nus et vérifiez l'intérieur de vos chaussures avant de les enfiler&nbsp;;</li>
+          <li>n'utilisez ni coricides, ni instruments coupants, ni bouillotte&nbsp;;</li>
+          <li>préférez des chaussettes sans coutures et des chaussures larges et fermées.</li>
+        </ul>
+
+        <h2 id="questions" class="section-anchor">Questions fréquentes</h2>
+        <div class="faq">{{{ blocks.faq }}}
+        </div>
+      </article>
+
+      {{> aside }}
+    </div>
+
+    {{> cta-band }}

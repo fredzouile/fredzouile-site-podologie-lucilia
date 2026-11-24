@@ -1,0 +1,348 @@
+---
+{
+  "path": "/",
+  "title": "Podologue Paris 16 – Lucilia Afonso, pédicure-podologue",
+  "description": "Pédicure-podologue à Paris 16e, 24 rue Jouvenet : bilan podologique, semelles orthopédiques sur mesure et soins de pédicurie. Rendez-vous sur Doctolib.",
+  "bodyClass": "page-home",
+  "priority": 1.0,
+  "schema": ["cabinet", "website"]
+}
+---
+    <!-- ============ Accroche ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Cabinet de podologie · Paris 16<sup>e</sup><span class="hide-mobile"> – Auteuil</span></p>
+          <h1 id="hero-title" class="hero__title">
+            Lucilia Afonso,
+            <span class="hero__title-role">pédicure-podologue à Paris 16<sup>e</sup></span>
+          </h1>
+          <p class="tagline">Vos pieds méritent une attention particulière.</p>
+          <p class="lead">
+            Je vous accueille au 24 rue Jouvenet pour un bilan podologique, des semelles orthopédiques
+            sur mesure ou des soins de pédicurie. Enfants, sportifs, seniors, patients diabétiques&nbsp;:
+            chaque consultation commence par une écoute attentive.
+          </p>
+          <div class="actions hero__actions">
+            <a class="btn btn--primary btn--lg" href="{{@ site.cabinet.doctolib }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+              <span>Prendre rendez-vous <span class="btn__sub">sur Doctolib</span></span>
+            </a>
+            <a class="btn btn--outline btn--lg" href="tel:{{@ site.cabinet.telephone }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              <span><span class="visually-hidden">Appeler le </span>{{ site.cabinet.telephoneAffiche }}</span>
+            </a>
+          </div>
+          <ul class="hero__facts">
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Consultation sans ordonnance</li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Réservation en ligne 24&nbsp;h/24</li>
+          </ul>
+        </div>
+
+        <div class="hero__media">
+          <div class="portrait">
+            <img
+              src="/assets/img/lucilia-afonso-podologue-paris-16-600.webp"
+              srcset="/assets/img/lucilia-afonso-podologue-paris-16-420.webp 420w, /assets/img/lucilia-afonso-podologue-paris-16-600.webp 600w"
+              sizes="(min-width: 960px) 420px, (min-width: 640px) 360px, 78vw"
+              width="600" height="800"
+              alt="Portrait de Lucilia Afonso, pédicure-podologue à Paris 16e, en blouse blanche"
+              fetchpriority="high" decoding="async">
+          </div>
+          <div class="hero__card">
+            <span class="hero__card-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>
+            <p>
+              <strong>{{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</strong><br>
+              Métro {{{ blocks.metroList }}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Repères ============ -->
+    <section class="trust" aria-label="En bref">
+      <ul class="container trust__list">
+        <li class="trust__item">
+          <span class="trust__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-diploma"/></svg></span>
+          <span><strong>Diplômée d'État</strong> en pédicurie-podologie</span>
+        </li>
+        <li class="trust__item">
+          <span class="trust__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span>
+          <span><strong>Inscrite à l'Ordre</strong> des pédicures-podologues</span>
+        </li>
+        <li class="trust__item">
+          <span class="trust__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-users"/></svg></span>
+          <span><strong>Toute la famille</strong> enfants, adultes, seniors</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ Prestations ============ -->
+    <section class="section" id="soins" aria-labelledby="soins-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Prestations</p>
+          <h2 id="soins-title">Les soins proposés au cabinet</h2>
+          <p class="section__intro">
+            Du soin de confort au bilan complet, chaque prise en charge est adaptée à vos pieds,
+            à votre activité et à vos chaussures.
+          </p>
+        </header>
+        <ul class="services">{{{ blocks.servicesGrid }}}
+        </ul>
+        <p class="section__more"><a class="link-arrow" href="/prestations/">Voir le détail des prestations<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ Quand consulter ============ -->
+    <section class="section section--cream" id="quand-consulter" aria-labelledby="quand-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Pour qui&nbsp;?</p>
+          <h2 id="quand-title">Quand consulter un podologue&nbsp;?</h2>
+          <p class="section__intro">
+            Une douleur qui dure, une gêne en marchant, une question sur les pieds de votre enfant&nbsp;:
+            inutile d'attendre que la douleur s'installe. Le pédicure-podologue se consulte directement,
+            sans ordonnance.
+          </p>
+        </header>
+        <div class="audiences">
+          <article class="audience">
+            <h3 class="audience__title"><span class="audience__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sneaker"/></svg></span>Sport et activité physique</h3>
+            <ul class="checklist">
+              <li>Douleur au talon ou sous le pied après l'effort</li>
+              <li>Tendinite, douleur au genou ou au tibia qui revient</li>
+              <li>Ampoules, ongles noircis, chaussures qui blessent</li>
+              <li>Reprise du sport ou préparation d'une course</li>
+            </ul>
+          </article>
+          <article class="audience">
+            <h3 class="audience__title"><span class="audience__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-foot"/></svg></span>Seniors</h3>
+            <ul class="checklist">
+              <li>Cors, durillons, callosités douloureuses</li>
+              <li>Ongles épais ou difficiles à couper soi-même</li>
+              <li>Chaussures qui blessent, appréhension en marchant</li>
+              <li>Peau sèche, crevasses aux talons</li>
+            </ul>
+          </article>
+          <article class="audience">
+            <h3 class="audience__title"><span class="audience__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-baby"/></svg></span>Enfants et adolescents</h3>
+            <ul class="checklist">
+              <li>Pieds plats ou qui tournent vers l'intérieur</li>
+              <li>Marche sur la pointe des pieds qui persiste</li>
+              <li>Chaussures qui s'usent de façon inégale</li>
+              <li>Douleur au talon pendant la croissance</li>
+            </ul>
+          </article>
+          <article class="audience">
+            <h3 class="audience__title"><span class="audience__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg></span>Diabète</h3>
+            <ul class="checklist">
+              <li>Un examen régulier des pieds est recommandé</li>
+              <li>Perte de sensibilité, peau sèche, fissures</li>
+              <li>Ongles et cors à soigner sans risque de blessure</li>
+              <li>Séances de prévention prises en charge selon votre niveau de risque, sur prescription</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Semelles orthopédiques ============ -->
+    <section class="section" id="semelles" aria-labelledby="semelles-title">
+      <div class="container split">
+        <div class="split__text">
+          <p class="eyebrow">Orthèses plantaires</p>
+          <h2 id="semelles-title">Semelles orthopédiques sur mesure à Paris 16<sup>e</sup></h2>
+          <p>
+            Les semelles orthopédiques, ou orthèses plantaires, modifient la façon dont le pied prend appui&nbsp;:
+            elles peuvent répartir les pressions, compenser un déséquilibre ou protéger une zone sensible.
+            Elles sont conçues sur mesure, après un bilan complet, pour vos chaussures de ville comme de sport.
+          </p>
+          <p class="note">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg>
+            <span><strong>Remboursement&nbsp;:</strong> partiel par l'Assurance Maladie sur prescription médicale, complété selon votre mutuelle.</span>
+          </p>
+          <p><a class="btn btn--outline" href="/semelles-orthopediques/">Tout savoir sur les semelles</a></p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <h3 class="step__title">Bilan podologique</h3>
+            <p>Examen des pieds, de la marche et de la posture&nbsp;; échange sur vos douleurs, votre activité et vos chaussures.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Prise d'empreinte</h3>
+            <p>Relevé précis de la forme de vos pieds. {{ site.semelles.technique }}</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Fabrication sur mesure</h3>
+            <p>{{ site.semelles.fabrication }}. Délai&nbsp;: {{ site.semelles.delai }}.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title">Remise et suivi</h3>
+            <p>Essai dans vos chaussures, conseils pour vous y habituer, puis rendez-vous de contrôle.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ Premier rendez-vous ============ -->
+    <section class="section section--sage" id="consultation" aria-labelledby="consultation-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Première consultation</p>
+          <h2 id="consultation-title">Comment se passe un premier rendez-vous&nbsp;?</h2>
+        </header>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <h3 class="timeline__title">Écouter</h3>
+            <p>Vos douleurs, vos antécédents, votre activité, vos chaussures&nbsp;: je prends le temps de comprendre ce qui vous amène.</p>
+          </li>
+          <li class="timeline__item">
+            <h3 class="timeline__title">Examiner</h3>
+            <p>Observation des pieds debout et allongé, analyse de la marche et de la posture si nécessaire.</p>
+          </li>
+          <li class="timeline__item">
+            <h3 class="timeline__title">Expliquer et proposer</h3>
+            <p>Je vous explique ce que j'observe et les solutions possibles&nbsp;: soin, semelles, conseils de chaussage, ou orientation vers votre médecin si besoin.</p>
+          </li>
+        </ol>
+        <div class="infobox">
+          <div class="infobox__item">
+            <h3 class="infobox__title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>Durée</h3>
+            <p>{{ site.consultation.duree }}</p>
+          </div>
+          <div class="infobox__item">
+            <h3 class="infobox__title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>À apporter</h3>
+            <p>Carte Vitale, ordonnance si vous en avez une, les chaussures que vous portez le plus (y compris de sport), vos anciennes semelles et vos examens récents (radios, échographies).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ La praticienne ============ -->
+    <section class="section" id="praticienne" aria-labelledby="praticienne-title">
+      <div class="container split split--media">
+        <div class="photo-placeholder" aria-hidden="true">
+          <svg class="photo-placeholder__mark"><use href="#logo-mark"/></svg>
+          <span>Photo du cabinet<br>à venir</span>
+        </div>
+        <div class="split__text">
+          <p class="eyebrow">La praticienne</p>
+          <h2 id="praticienne-title">Une praticienne à votre écoute, au cœur d'Auteuil</h2>
+          <p>
+            Diplômée d'État en pédicurie-podologie {{ site.praticienne.diplomeDetail }}, je vous reçois
+            au 24 rue Jouvenet, dans le 16<sup>e</sup> arrondissement de Paris.
+          </p>
+          <p>
+            Mon approche&nbsp;: prendre le temps d'écouter, examiner avec précision et expliquer clairement,
+            pour vous proposer des soins adaptés à votre quotidien. [À COMPLÉTER : texte à valider avec vos mots]
+          </p>
+          <p>
+            Le cabinet accueille les patients du 16<sup>e</sup> arrondissement et des quartiers voisins&nbsp;:
+            Auteuil, Passy, Paris 15<sup>e</sup> et Boulogne-Billancourt.
+          </p>
+          <p><a class="link-arrow" href="/le-cabinet/">Découvrir le cabinet et mon parcours<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Tarifs ============ -->
+    <section class="section section--cream" id="tarifs" aria-labelledby="tarifs-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Tarifs et remboursements</p>
+          <h2 id="tarifs-title">Ce qui est remboursé, ce qui ne l'est pas</h2>
+          <p class="section__intro">
+            Les honoraires sont affichés au cabinet et détaillés sur la page Tarifs.
+            Voici l'essentiel à savoir avant de venir.
+          </p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Semelles orthopédiques</h3>
+            <p>Remboursées en partie sur prescription médicale, sur la base d'un tarif réglementaire. Votre mutuelle peut compléter selon votre contrat.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Soins de pédicurie</h3>
+            <p>Non remboursés par l'Assurance Maladie, sauf séances de prévention pour les patients diabétiques à risque, sur prescription. Certaines mutuelles prévoient un forfait.</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Bilan podologique</h3>
+            <p>Non remboursé par l'Assurance Maladie. Une note d'honoraires vous est remise pour votre mutuelle.</p>
+          </article>
+        </div>
+        <p class="section__more"><a class="link-arrow" href="/tarifs-remboursements/">Voir les tarifs du cabinet<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (aperçu) ============ -->
+    <section class="section" id="questions" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section__header section__header--center">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 id="faq-title">Vos questions avant de prendre rendez-vous</h2>
+        </header>
+        <div class="faq">{{{ blocks.faqAccueil }}}
+        </div>
+        <p class="section__more section__more--center"><a class="link-arrow" href="/faq/">Toutes les questions fréquentes<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ============ Contact et accès ============ -->
+    <section class="section section--sage" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <div class="contact__info">
+          <p class="eyebrow">Contact et accès</p>
+          <h2 id="contact-title">Venir au cabinet</h2>
+          <dl class="infolist">
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Adresse</dt>
+              <dd>{{ site.cabinet.rue }}<br>{{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-metro"/></svg>Métro</dt>
+              <dd>{{{ blocks.metroList }}}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bus"/></svg>Bus</dt>
+              <dd>{{ site.acces.bus }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-car"/></svg>Stationnement</dt>
+              <dd>{{ site.acces.stationnement }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-access"/></svg>Accessibilité</dt>
+              <dd>{{ site.acces.accessibilite }}</dd>
+            </div>
+            <div class="infolist__row">
+              <dt><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>Horaires</dt>
+              <dd class="hours">{{{ blocks.hoursTable }}}</dd>
+            </div>
+          </dl>
+          <div class="actions">
+            <a class="btn btn--primary" href="{{@ site.cabinet.doctolib }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+              Prendre rendez-vous
+            </a>
+            <a class="btn btn--outline" href="tel:{{@ site.cabinet.telephone }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              <span><span class="visually-hidden">Appeler le </span>{{ site.cabinet.telephoneAffiche }}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map" data-map data-src="{{@ blocks.mapsEmbed }}">
+          <div class="map__placeholder">
+            <span class="map__pin"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>
+            <p class="map__address"><strong>{{ site.cabinet.rue }}</strong><br>{{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</p>
+            <p class="map__notice">La carte est fournie par Google Maps, qui dépose des cookies. Elle ne s'affiche qu'avec votre accord.</p>
+            <button type="button" class="btn btn--outline btn--sm" data-map-load>Afficher la carte</button>
+            <a class="link-arrow" href="{{@ blocks.mapsDirections }}">Itinéraire dans Google Maps<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{> cta-band }}

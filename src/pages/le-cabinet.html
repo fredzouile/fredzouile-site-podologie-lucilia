@@ -1,0 +1,53 @@
+---
+{
+  "path": "/le-cabinet/",
+  "title": "Le cabinet et la praticienne | Podologue Paris 16",
+  "description": "Découvrez le cabinet de Lucilia Afonso, pédicure-podologue diplômée d'État à Paris 16e (Auteuil) : parcours, approche des soins et accès au cabinet.",
+  "priority": 0.7,
+  "bodyClass": "page-inner",
+  "schema": ["cabinet"],
+  "breadcrumb": [{ "name": "Le cabinet", "path": "/le-cabinet/" }],
+  "eyebrow": "Le cabinet et la praticienne",
+  "h1": "Un cabinet de podologie à Auteuil, Paris 16<sup>e</sup>",
+  "lead": "Lucilia Afonso, pédicure-podologue diplômée d'État, vous reçoit au 24 rue Jouvenet pour des soins, des bilans et des semelles orthopédiques, à tous les âges de la vie."
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout">
+      <article class="prose">
+        <h2 id="parcours" class="section-anchor">Mon parcours</h2>
+        <p>Diplômée d'État en pédicurie-podologie {{ site.praticienne.diplomeDetail }}, je suis inscrite au tableau de l'Ordre des pédicures-podologues.</p>
+        <p>[À COMPLÉTER : formations complémentaires (par exemple posturologie, podologie du sport, pied diabétique), années d'expérience, lieux d'exercice précédents]</p>
+        <p>Langues parlées au cabinet&nbsp;: {{ blocks.langues }}.</p>
+
+        <h2 id="approche" class="section-anchor">Mon approche</h2>
+        <p>Chaque consultation commence par une écoute&nbsp;: vos douleurs, vos habitudes, vos chaussures, vos attentes. J'examine ensuite vos pieds avec précision, puis je vous explique ce que j'observe et les solutions possibles, sans jargon.</p>
+        <p>Mon objectif est de vous proposer des soins adaptés à votre quotidien et de vous donner les clés pour prendre soin de vos pieds entre deux rendez-vous. Lorsque la situation le nécessite, je travaille en lien avec votre médecin traitant et les autres professionnels de santé qui vous suivent.</p>
+        <p>[À COMPLÉTER : relire et ajuster ce texte avec vos mots]</p>
+
+        <h2 id="engagements" class="section-anchor">Mes engagements</h2>
+        <ul class="checklist">
+          <li><strong>Vous informer clairement</strong> sur ce que j'observe, les soins proposés et leur prix, avant tout soin.</li>
+          <li><strong>Respecter des règles d'hygiène strictes</strong>&nbsp;: instruments stérilisés ou à usage unique.</li>
+          <li><strong>Garantir la confidentialité</strong> de tout ce qui est dit et constaté en consultation, couvert par le secret professionnel.</li>
+          <li><strong>Vous orienter vers votre médecin</strong> chaque fois qu'un avis médical est nécessaire.</li>
+        </ul>
+
+        <h2 id="lieu" class="section-anchor">Le cabinet</h2>
+        <p>Le cabinet se trouve au {{ site.cabinet.rue }}, dans le quartier d'Auteuil, au sud du 16<sup>e</sup> arrondissement. Accessibilité&nbsp;: {{ site.acces.accessibilite }}.</p>
+        <div class="photo-grid" aria-hidden="true">
+          <div class="photo-placeholder"><svg class="photo-placeholder__mark"><use href="#logo-mark"/></svg><span>Salle de soins<br>photo à venir</span></div>
+          <div class="photo-placeholder"><svg class="photo-placeholder__mark"><use href="#logo-mark"/></svg><span>Accueil<br>photo à venir</span></div>
+          <div class="photo-placeholder"><svg class="photo-placeholder__mark"><use href="#logo-mark"/></svg><span>Le cabinet<br>photo à venir</span></div>
+        </div>
+
+        <h2 id="venir" class="section-anchor">Venir au cabinet</h2>
+        <p>Métro&nbsp;: {{{ blocks.metroList }}}. Bus&nbsp;: {{ site.acces.bus }}.</p>
+        <p><a class="link-arrow" href="/contact-acces/">Horaires, plan d'accès et stationnement<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+      </article>
+
+      {{> aside }}
+    </div>
+
+    {{> cta-band }}

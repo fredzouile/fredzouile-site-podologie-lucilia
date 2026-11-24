@@ -1,0 +1,51 @@
+<header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#logo-mark"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">Lucilia Afonso</span>
+          <span class="brand__role">Pédicure-podologue<span class="brand__place"> · Paris 16<sup>e</sup></span></span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul class="site-nav__list">{{{ blocks.navCourt }}}</ul>
+      </nav>
+
+      <a class="header-phone" href="tel:{{@ site.cabinet.telephone }}">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+        <span>{{ site.cabinet.telephoneAffiche }}</span>
+      </a>
+      <a class="btn btn--primary btn--sm header-cta" href="{{@ site.cabinet.doctolib }}">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+        Rendez-vous
+      </a>
+
+      <details class="mobile-menu">
+        <summary class="mobile-menu__toggle">
+          <svg class="icon icon--open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+          <span>Menu</span>
+        </summary>
+        <div class="mobile-menu__panel">
+          <nav aria-label="Navigation mobile">
+            <ul class="mobile-menu__list">
+              <li><a href="/">Accueil</a></li>
+              {{{ blocks.nav }}}
+            </ul>
+          </nav>
+          <div class="mobile-menu__actions">
+            <a class="btn btn--primary btn--block" href="{{@ site.cabinet.doctolib }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg>
+              Prendre rendez-vous sur Doctolib
+            </a>
+            <a class="btn btn--outline btn--block" href="tel:{{@ site.cabinet.telephone }}">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>
+              {{ site.cabinet.telephoneAffiche }}
+            </a>
+          </div>
+          <p class="mobile-menu__address">{{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}</p>
+        </div>
+      </details>
+    </div>
+  </header>

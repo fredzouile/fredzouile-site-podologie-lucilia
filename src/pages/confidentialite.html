@@ -1,0 +1,53 @@
+---
+{
+  "path": "/confidentialite/",
+  "title": "Confidentialité et cookies | Podologue Paris 16",
+  "description": "Politique de confidentialité du site du cabinet de podologie de Paris 16e : données collectées, cookies, durée de conservation et vos droits (RGPD).",
+  "priority": 0.2,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Confidentialité et cookies", "path": "/confidentialite/" }],
+  "eyebrow": "Vos données",
+  "h1": "Politique de confidentialité et cookies",
+  "lead": "Ce site a été conçu pour collecter le moins de données possible&nbsp;: pas de formulaire, pas de mesure d'audience, pas de publicité.",
+  "cta": false
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout page-layout--single">
+      <article class="prose legal">
+        <h2 id="responsable">Responsable du traitement</h2>
+        <p>{{ site.praticienne.nom }}, pédicure-podologue, {{ site.cabinet.rue }}, {{ site.cabinet.codePostal }} {{ site.cabinet.ville }}. Contact&nbsp;: <a href="mailto:{{@ site.cabinet.email }}">{{ site.cabinet.email }}</a>.</p>
+
+        <h2 id="donnees">Quelles données sont traitées&nbsp;?</h2>
+        <h3>Consultation du site</h3>
+        <p>Le site ne comporte ni formulaire, ni espace personnel, ni outil de mesure d'audience, ni publicité. Comme tout site internet, l'hébergeur enregistre des journaux techniques (adresse IP, date et heure, page consultée, type de navigateur) pour assurer la sécurité et le bon fonctionnement du service. Ces journaux sont conservés pour une durée limitée, selon la politique de l'hébergeur ({{ site.hebergeur.nom }}). Base légale&nbsp;: intérêt légitime.</p>
+        <h3>Échanges par email ou par téléphone</h3>
+        <p>Si vous contactez le cabinet, les informations que vous transmettez (nom, coordonnées, message) sont utilisées uniquement pour vous répondre et organiser votre rendez-vous. Elles sont conservées le temps nécessaire au traitement de votre demande, puis au plus un an après le dernier échange. Merci de ne pas transmettre d'informations sur votre santé par email.</p>
+        <h3>Prise de rendez-vous en ligne</h3>
+        <p>La prise de rendez-vous en ligne est assurée par Doctolib, qui traite vos données en tant que responsable de traitement pour son service. Consultez sa politique de confidentialité sur doctolib.fr.</p>
+        <h3>Dossier patient</h3>
+        <p>Les données de santé recueillies lors des consultations (dossier patient) ne transitent pas par ce site. Elles font l'objet d'une information spécifique au cabinet et sont couvertes par le secret professionnel.</p>
+
+        <h2 id="cookies" class="section-anchor">Cookies et traceurs</h2>
+        <p>Ce site ne dépose <strong>aucun cookie publicitaire ni de mesure d'audience</strong>.</p>
+        <ul>
+          <li><strong>Mémorisation de votre choix</strong>&nbsp;: votre réponse au bandeau cookies est enregistrée dans votre navigateur (stockage local) pendant {{ blocks.cookieDays }} jours, afin de ne pas vous la redemander à chaque visite. Ce stockage est strictement nécessaire et ne nécessite pas de consentement.</li>
+          <li><strong>Carte Google Maps</strong>&nbsp;: elle n'est chargée que si vous l'acceptez. Google peut alors déposer des cookies et collecter des données de navigation, selon sa propre politique de confidentialité (policies.google.com/privacy).</li>
+        </ul>
+        <p>Vous pouvez modifier votre choix à tout moment&nbsp;:</p>
+        <p><button type="button" class="btn btn--outline btn--sm" data-cookie-settings>Gérer les cookies</button></p>
+
+        <h2 id="transferts">Transferts hors de l'Union européenne</h2>
+        <p>L'hébergeur du site ({{ site.hebergeur.nom }}) et Google (si vous affichez la carte) sont des sociétés établies aux États-Unis. Les transferts éventuels de données sont encadrés par les garanties prévues par le RGPD (décision d'adéquation dite «&nbsp;Data Privacy Framework&nbsp;» ou clauses contractuelles types, selon le prestataire).</p>
+
+        <h2 id="droits">Vos droits</h2>
+        <p>Conformément au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données. Pour les exercer, écrivez à <a href="mailto:{{@ site.cabinet.email }}">{{ site.cabinet.email }}</a>. Une réponse vous sera apportée dans un délai d'un mois.</p>
+        <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (cnil.fr).</p>
+
+        <h2 id="securite">Sécurité</h2>
+        <p>Le site est servi exclusivement en HTTPS et ne charge aucun script tiers sans votre accord.</p>
+
+        <p><em>Dernière mise à jour&nbsp;: novembre 2026.</em></p>
+      </article>
+    </div>

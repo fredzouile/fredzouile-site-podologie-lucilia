@@ -1,0 +1,49 @@
+---
+{
+  "path": "/tarifs-remboursements/",
+  "title": "Tarifs et remboursements | Podologue Paris 16",
+  "description": "Tarifs du cabinet de podologie à Paris 16e et remboursements : Assurance Maladie, mutuelles, semelles orthopédiques et soins des patients diabétiques.",
+  "priority": 0.8,
+  "bodyClass": "page-inner",
+  "breadcrumb": [{ "name": "Tarifs et remboursements", "path": "/tarifs-remboursements/" }],
+  "eyebrow": "Tarifs",
+  "h1": "Tarifs et remboursements",
+  "lead": "Les tarifs du cabinet, ce que rembourse l'Assurance Maladie et le rôle de votre mutuelle. Les honoraires sont également affichés dans la salle d'attente."
+}
+---
+    {{> page-hero }}
+
+    <div class="container page-layout">
+      <article class="prose">
+        <h2 id="tarifs" class="section-anchor">Les tarifs du cabinet</h2>
+        {{{ blocks.tarifsTable }}}
+        <p>Tarifs en vigueur au {{ site.tarifs.miseAJour }}. Les soins de pédicurie-podologie qui ne relèvent pas de la nomenclature de l'Assurance Maladie sont à honoraires libres, fixés avec tact et mesure. Le prix des semelles orthopédiques vous est indiqué avant leur fabrication.</p>
+
+        <h2 id="situation" class="section-anchor">Conventionnement et carte Vitale</h2>
+        <ul>
+          <li>Conventionnement&nbsp;: {{ site.cabinet.conventionnement }}.</li>
+          <li>Carte Vitale&nbsp;: {{ site.cabinet.carteVitale }}.</li>
+        </ul>
+
+        <h2 id="assurance-maladie" class="section-anchor">Ce que rembourse l'Assurance Maladie</h2>
+        <h3>Semelles orthopédiques</h3>
+        <p>Remboursées à 60&nbsp;% d'une base fixée par la réglementation, sur prescription médicale. Cette base, qui varie selon la pointure, est très inférieure au prix de semelles sur mesure. Le pédicure-podologue peut renouveler, sauf opposition du médecin, une prescription d'orthèses plantaires datant de moins de trois ans.</p>
+        <h3>Patients diabétiques</h3>
+        <p>Pour les pieds classés à risque de grade 2 ou 3 par le médecin, l'Assurance Maladie prend en charge, sur prescription, un bilan podologique et des séances de prévention&nbsp;: jusqu'à 5 par an au grade 2 et jusqu'à 6 par an au grade 3 (davantage dans certaines situations), selon la réglementation en vigueur. <a href="/prestations/pied-diabetique/">En savoir plus</a>.</p>
+        <h3>Autres soins</h3>
+        <p>Le bilan podologique, les soins de pédicurie (cors, durillons, ongles), le soin des ongles incarnés et le traitement des verrues ne sont pas remboursés par l'Assurance Maladie.</p>
+
+        <h2 id="mutuelle" class="section-anchor">Le rôle de votre mutuelle</h2>
+        <p>De nombreuses mutuelles prévoient un forfait annuel pour la pédicurie-podologie et/ou pour les semelles orthopédiques. Les montants varient beaucoup d'un contrat à l'autre&nbsp;: renseignez-vous auprès de votre mutuelle. Une note d'honoraires vous est remise pour vos démarches.</p>
+
+        <h2 id="paiement" class="section-anchor">Moyens de paiement</h2>
+        <p>{{ site.cabinet.paiements }}</p>
+
+        <h2 id="annulation" class="section-anchor">En cas d'empêchement</h2>
+        <p>Merci de prévenir le plus tôt possible, sur Doctolib ou par téléphone, afin que le créneau puisse être proposé à un autre patient.</p>
+      </article>
+
+      {{> aside }}
+    </div>
+
+    {{> cta-band }}

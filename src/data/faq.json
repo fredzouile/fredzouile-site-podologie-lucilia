@@ -1,0 +1,150 @@
+[
+  {
+    "id": "ordonnance",
+    "categorie": "Consulter un podologue",
+    "sur": ["accueil", "faq"],
+    "q": "Faut-il une ordonnance pour consulter un podologue ?",
+    "a": "<p>Non. Vous pouvez prendre rendez-vous directement, sans passer par votre médecin. Une prescription médicale est en revanche nécessaire pour obtenir le remboursement des semelles orthopédiques et des séances de prévention des patients diabétiques&nbsp;: si vous en avez une, apportez-la.</p>"
+  },
+  {
+    "id": "difference-pedicure-esthetique",
+    "categorie": "Consulter un podologue",
+    "sur": ["faq", "soins-de-pedicurie"],
+    "q": "Quelle différence entre un pédicure-podologue et une pédicure esthétique ?",
+    "a": "<p>Le pédicure-podologue est un professionnel de santé, titulaire d'un diplôme d'État et inscrit à l'Ordre des pédicures-podologues. Il examine les pieds, soigne les affections de la peau et des ongles (cors, durillons, ongles incarnés, verrues…), réalise des bilans et conçoit des semelles orthopédiques.</p><p>La pédicure esthétique relève de la beauté et du bien-être&nbsp;: elle ne réalise pas d'actes de soin.</p>"
+  },
+  {
+    "id": "que-apporter",
+    "categorie": "Consulter un podologue",
+    "sur": ["accueil", "faq", "bilan-podologique"],
+    "q": "Que faut-il apporter au premier rendez-vous ?",
+    "a": "<ul><li>votre carte Vitale et, si vous en avez une, votre ordonnance&nbsp;;</li><li>les chaussures que vous portez le plus souvent, y compris de sport&nbsp;;</li><li>vos anciennes semelles, si vous en avez&nbsp;;</li><li>vos examens récents en lien avec vos pieds (radios, échographies).</li></ul>"
+  },
+  {
+    "id": "duree-consultation",
+    "categorie": "Consulter un podologue",
+    "sur": ["accueil", "faq"],
+    "q": "Combien de temps dure une consultation ?",
+    "a": "<p>{{ site.consultation.duree }}</p>"
+  },
+  {
+    "id": "age-enfant",
+    "categorie": "Consulter un podologue",
+    "sur": ["faq", "podologie-enfant"],
+    "q": "À partir de quel âge un enfant peut-il consulter un podologue ?",
+    "a": "<p>Il n'y a pas d'âge minimum. Chez le jeune enfant, la voûte plantaire se forme progressivement, souvent jusqu'à 5 ou 6 ans&nbsp;: un pied d'aspect plat est donc fréquent et le plus souvent normal. Un avis est utile si votre enfant a mal, se fatigue vite à la marche, tombe souvent, marche sur la pointe des pieds de façon persistante ou use ses chaussures de manière très inégale.</p><p>Le cabinet reçoit les enfants {{ site.cabinet.ageEnfants }}.</p>"
+  },
+  {
+    "id": "seances-remboursees",
+    "categorie": "Remboursements",
+    "sur": ["faq", "soins-de-pedicurie"],
+    "q": "Les séances chez le podologue sont-elles remboursées ?",
+    "a": "<p>En règle générale, non&nbsp;: les soins de pédicurie et le bilan podologique ne sont pas remboursés par l'Assurance Maladie. Font exception les soins de prévention des patients diabétiques dont le pied est classé à risque (grades 2 et 3), sur prescription médicale.</p><p>De nombreuses mutuelles prévoient un forfait pour la pédicurie-podologie&nbsp;: vérifiez votre contrat. Une note d'honoraires vous est remise pour vos démarches.</p>"
+  },
+  {
+    "id": "semelles-remboursees",
+    "categorie": "Remboursements",
+    "sur": ["accueil", "faq", "semelles"],
+    "q": "Les semelles orthopédiques sont-elles remboursées ?",
+    "a": "<p>En partie. Les semelles orthopédiques (orthèses plantaires) sont remboursées par l'Assurance Maladie à 60&nbsp;% d'une base fixée par la réglementation, sur prescription médicale. Le pédicure-podologue peut aussi renouveler, sauf opposition du médecin, une prescription d'orthèses plantaires datant de moins de trois ans.</p><p>Cette base étant très inférieure au prix de semelles sur mesure, la part prise en charge par l'Assurance Maladie reste faible&nbsp;; votre mutuelle peut compléter selon votre contrat.</p>"
+  },
+  {
+    "id": "diabete-frequence",
+    "categorie": "Remboursements",
+    "sur": ["faq", "pied-diabetique"],
+    "q": "Je suis diabétique : à quelle fréquence faire examiner mes pieds ?",
+    "a": "<p>C'est votre médecin qui évalue le niveau de risque de vos pieds, du grade 0 au grade 3. Aux grades 2 et 3, l'Assurance Maladie prend en charge, sur prescription médicale, un bilan podologique et des séances de soins de prévention chez le pédicure-podologue&nbsp;: jusqu'à 5 séances par an au grade 2 et jusqu'à 6 séances par an au grade 3 (davantage dans certaines situations), selon la réglementation en vigueur.</p><p>Quel que soit votre grade, regardez vos pieds chaque jour et consultez rapidement votre médecin en cas de plaie, de rougeur ou de changement de couleur.</p>"
+  },
+  {
+    "id": "semelles-delai",
+    "categorie": "Semelles orthopédiques",
+    "sur": ["faq", "semelles"],
+    "q": "Combien de temps faut-il pour fabriquer des semelles ?",
+    "a": "<p>Délai entre le bilan et la remise des semelles&nbsp;: {{ site.semelles.delai }}. Si vous préparez une compétition ou un voyage, prenez rendez-vous suffisamment tôt pour avoir le temps de vous habituer à vos semelles.</p>"
+  },
+  {
+    "id": "semelles-duree-vie",
+    "categorie": "Semelles orthopédiques",
+    "sur": ["faq", "semelles"],
+    "q": "Combien de temps durent des semelles, et quand les renouveler ?",
+    "a": "<p>Cela dépend de l'usage, de l'activité, du poids et des chaussures. Chez l'adulte, une paire est souvent utilisée un à deux ans&nbsp;; chez l'enfant, elle doit suivre la croissance du pied et l'évolution de la pointure. Un contrôle régulier permet de vérifier l'usure et l'adaptation des semelles.</p>"
+  },
+  {
+    "id": "semelles-chaussures",
+    "categorie": "Semelles orthopédiques",
+    "sur": ["faq", "semelles", "podologie-du-sport"],
+    "q": "Peut-on porter ses semelles dans toutes ses chaussures ?",
+    "a": "<p>Les semelles sont conçues pour un type de chaussures&nbsp;: ville, sport ou travail. Elles se glissent dans des chaussures fermées, idéalement avec une semelle intérieure amovible. Elles conviennent mal aux escarpins à talons hauts, aux ballerines très fines et aux sandales ouvertes.</p><p>Apportez vos chaussures habituelles au bilan&nbsp;: les semelles sont réalisées en fonction d'elles.</p>"
+  },
+  {
+    "id": "ongle-incarne-attente",
+    "categorie": "Situations particulières",
+    "sur": ["faq", "ongle-incarne"],
+    "q": "Ongle incarné : que faire en attendant le rendez-vous ?",
+    "a": "<ul><li>lavez et séchez soigneusement le pied, en particulier entre les orteils&nbsp;;</li><li>portez des chaussures larges qui n'appuient pas sur l'orteil&nbsp;;</li><li>ne coupez pas le coin de l'ongle vous-même et n'essayez pas d'extraire la pointe qui s'enfonce.</li></ul><p>Consultez votre médecin sans attendre en cas de rougeur qui s'étend, d'écoulement de pus ou de fièvre, et dans tous les cas si vous êtes diabétique.</p>"
+  },
+
+  {
+    "id": "bilan-sans-douleur",
+    "categorie": "Bilan podologique",
+    "sur": ["bilan-podologique"],
+    "q": "Un bilan est-il utile si je n'ai pas mal ?",
+    "a": "<p>Il peut l'être, en prévention&nbsp;: reprise ou intensification du sport, nouvelle activité professionnelle debout, question sur les pieds de votre enfant, ou pieds devenus fragiles avec l'âge ou une maladie comme le diabète.</p>"
+  },
+  {
+    "id": "pedicurie-preparer",
+    "categorie": "Soins de pédicurie",
+    "sur": ["soins-de-pedicurie"],
+    "q": "Faut-il préparer ses pieds avant un soin ?",
+    "a": "<p>Non. Venez simplement les pieds propres, sans vernis si possible (pour que les ongles puissent être examinés), et évitez de couper ou de râper vous-même la zone gênante dans les jours qui précèdent.</p>"
+  },
+  {
+    "id": "ongle-incarne-douleur",
+    "categorie": "Ongle incarné",
+    "sur": ["ongle-incarne"],
+    "q": "Le soin d'un ongle incarné est-il douloureux ?",
+    "a": "<p>Le soin est réalisé avec précaution, mais la zone peut être sensible lorsqu'elle est très enflammée. Signalez toute douleur pendant la séance. Si l'orteil est infecté, un avis médical peut être nécessaire avant ou en complément du soin.</p>"
+  },
+  {
+    "id": "verrue-spontanee",
+    "categorie": "Verrue plantaire",
+    "sur": ["verrue-plantaire"],
+    "q": "Une verrue peut-elle disparaître toute seule ?",
+    "a": "<p>Oui, certaines verrues disparaissent spontanément, parfois après plusieurs mois, en particulier chez l'enfant. Un traitement se discute lorsqu'elle est douloureuse, gênante à la marche, qu'elle s'étend ou qu'elle persiste.</p>"
+  },
+  {
+    "id": "verrue-contagion",
+    "categorie": "Verrue plantaire",
+    "sur": ["verrue-plantaire"],
+    "q": "Les verrues plantaires sont-elles contagieuses ?",
+    "a": "<p>Oui. Elles sont dues à un virus (papillomavirus) qui se transmet surtout dans les lieux humides fréquentés pieds nus&nbsp;: piscines, vestiaires, douches collectives. Portez des sandales dans ces lieux et ne partagez ni serviettes ni chaussures.</p>"
+  },
+  {
+    "id": "sport-avant-course",
+    "categorie": "Podologie du sport",
+    "sur": ["podologie-du-sport"],
+    "q": "Quand consulter avant une course ou une compétition ?",
+    "a": "<p>Plusieurs semaines avant l'épreuve, pour laisser le temps de fabriquer les semelles et de s'y habituer à l'entraînement. Évitez de courir une compétition avec des semelles ou des chaussures neuves.</p>"
+  },
+  {
+    "id": "diabete-ongles",
+    "categorie": "Pied diabétique",
+    "sur": ["pied-diabetique"],
+    "q": "Pourquoi éviter de couper ses ongles soi-même quand on est diabétique ?",
+    "a": "<p>En cas de perte de sensibilité ou de troubles de la circulation, une petite blessure peut passer inaperçue et se compliquer. Si vous voyez mal vos pieds, avez du mal à les atteindre ou si votre sensibilité est diminuée, confiez la coupe des ongles et le soin des callosités à un pédicure-podologue.</p>"
+  },
+  {
+    "id": "enfant-pieds-plats",
+    "categorie": "Podologie de l'enfant",
+    "sur": ["podologie-enfant"],
+    "q": "Mon enfant a les pieds plats : faut-il s'inquiéter ?",
+    "a": "<p>Le plus souvent, non&nbsp;: chez le jeune enfant, la voûte plantaire se creuse progressivement avec la croissance. Un bilan est utile si votre enfant a mal, se fatigue vite, tombe souvent ou si l'aspect persiste en grandissant.</p>"
+  },
+  {
+    "id": "semelles-adaptation",
+    "categorie": "Semelles orthopédiques",
+    "sur": ["semelles"],
+    "q": "Faut-il un temps d'adaptation aux semelles ?",
+    "a": "<p>Oui, en général de quelques jours à quelques semaines. Portez-les progressivement, quelques heures par jour au début, puis augmentez. Signalez toute douleur ou gêne qui persiste, sans attendre le rendez-vous de contrôle.</p>"
+  }
+]
